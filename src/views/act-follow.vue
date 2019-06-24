@@ -29,7 +29,7 @@ export default {
   name: 'Rule',
   data () {
     return {
-      visible: true,
+      visible: false,
       nick: '我是主播的名字',
       id: '',
       number: 0
