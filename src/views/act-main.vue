@@ -93,7 +93,7 @@
         <div class="videos__head__detail">
           <div>点击
             <img src="../img/follow.png">
-            ，评选出本周“十大人物”和十佳视频</div>
+            ,评选出本周“十大人物”和十佳视频</div>
           <div>
             今日点赞机会还剩:{{count}}次
             <img @click="count--" src="../img/refresh.png">
