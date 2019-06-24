@@ -22,6 +22,7 @@
       <img src="./img/foot-btn_21.png" />
       <img src="./img/foot-btn_22.png" />
     </div>
+    <act-follow ref="follow" />
   </div>
 </template>
 
@@ -32,6 +33,7 @@
   import ActRewards from './views/act-rewards'
   import Posters from './views/Posters'
   import Rule from './views/Rule'
+  import ActFollow from './views/act-follow'
 
   export default {
     name: 'App',
@@ -40,7 +42,8 @@
       ActDraw,
       ActRewards,
       Posters,
-      Rule
+      Rule,
+      ActFollow
     },
     data () {
       return {
@@ -53,6 +56,9 @@
       },
       openPosters () {
         this.$refs.posters.open()
+      },
+      openFollow () {
+        this.$refs.follow.open()
       }
     }
   }

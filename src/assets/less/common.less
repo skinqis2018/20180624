@@ -308,8 +308,8 @@ body {
           align-items: center;
           font-size: .8rem;
           &__avatar {
-            width: 1.6rem;
-            height: 1.6rem;
+            width: 1.2rem;
+            height: 1.2rem;
             >img {
               width: 100%;
               height: 100%;
@@ -322,6 +322,7 @@ body {
             padding: auto .2rem;
             max-width: 6rem;
             overflow:hidden;
+            text-overflow: ellipsis;
             white-space: nowrap
           }
           &__follow {
@@ -443,8 +444,111 @@ body {
     margin: .3rem auto
   }
 }
+.follow {
+  &__form {
+    position: fixed;
+    width: 12.8rem;
+    z-index: 11;
+    left: 9.6rem;
+    top: 36%;
+    overflow: auto;
+    &__bg {
+      width: 100%;
+      height: 1rem;
+      background: url('../../img/follow-bg1.png') no-repeat left top;
+      background-size: 100% auto;
+      &__mid {
+        width: 100%;
+        background: url('../../img/follow-bg2.png') repeat-y left top;
+        background-size: 100%;
+      }
+      &__end {
+        width: 100%;
+        height: 2rem;
+        background: url('../../img/follow-bg3.png') no-repeat left bottom;
+        background-size: 100% auto;
+      }
+    }
+    header {
+      width: 11.68rem;
+      margin: 0 auto 0.5rem auto;
+      text-align: center;
+      font-size: .8rem
+    }
+    &__content {
+      width: 11rem;
+      margin: auto;
+      >img {
+        width: 100%
+      }
+      &__input {
+        width: 11rem;
+        margin-top: .4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        width: 4rem;
+        outline:none;
+        border:none;
+        background: none;
+        color: rgb(255, 204, 102);
+        font-weight: bolder;
+        font-size: 1.2rem;
+        text-align: center;
+        ::-webkit-input-placeholder {
+          color: rgb(255, 204, 102);
+          font-weight: bolder
+        }
+        :-moz-placeholder {
+         color: rgb(255, 204, 102);
+         font-weight: bolder
+        }
+        ::-moz-placeholder {
+         color: rgb(255, 204, 102);
+         font-weight: bolder
+        }
+        :-ms-input-placeholder {
+         color: rgb(255, 204, 102);
+         font-weight: bolder
+        }
+        :focus {
+          border:none;
+        }
+      }
+    }
+    footer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      >img {
+        width: 5rem;
+      }
+    }
+  }
+}
 .activePage {
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration:underline
+}
+.btn {
+  display: inline-block;
+  background: rgb(255, 204, 102) no-repeat center;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: .6rem;
+  border-radius: 45px;
+  color: #000;
+  &__plus {
+    background-image: linear-gradient(to top, currentColor, currentColor), linear-gradient(to top, currentColor, currentColor);
+    background-size: .8rem .2rem, .2rem .8rem;
+  }
+  &__minus {
+    background-image: linear-gradient(to top, currentColor, currentColor);
+    background-size: .8rem .2rem;
+  }
 }

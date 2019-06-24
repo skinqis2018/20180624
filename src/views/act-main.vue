@@ -7,7 +7,7 @@
           <img class="anchors__head__rose" src="../img/rose.png" />
           =1积分
         </div>
-        <img src="../img/get_count.png"/>
+        <img @click="toTask" src="../img/get_count.png"/>
       </div>
       <div class="anchors__list">
         <div class="anchors__list__head">
@@ -99,7 +99,7 @@
             <img @click="count--" src="../img/refresh.png">
           </div>
         </div>
-        <img src="../img/get_count.png" />
+        <img @click="toTask" src="../img/get_count.png" />
       </div>
       <div class="videos__list">
         <div class="videos__list__head">
@@ -122,7 +122,7 @@
                 <div class="videos__list__content__item__detail__nick">
                   {{item.nick}}
                 </div>
-                <div class="videos__list__content__item__detail__follow">
+                <div @click="openFollow(item.nick, item.id)" class="videos__list__content__item__detail__follow">
                   <img src="../img/follow.png">
                   {{item.follow}}
                 </div>
@@ -250,19 +250,19 @@ export default {
             poster: '',
             avatar: '/img/avatar.jpeg',
             nick: '我是主播名字',
-            follow: 999
+            follow: 9999
           },{
             id: 1,
             poster: '',
             avatar: '/img/avatar.jpeg',
-            nick: '我是主播名字',
-            follow: 999
+            nick: '我是主播的名字',
+            follow: 9999
           },{
             id: 2,
             poster: '',
             avatar: '/img/avatar.jpeg',
-            nick: '我是主播名字',
-            follow: 999
+            nick: '我是主播得的名字',
+            follow: 9999
           },{
             id: 3,
             poster: '',
@@ -310,6 +310,15 @@ export default {
       ]
     }
   },
+  created () {
+    eventBus.$on('conformFollow', obj => {
+      this.videos[0].map(item => {
+        if(item.id == obj.id) {
+          item.follow += obj.follow
+        }
+      })
+    })
+  },
   methods: {
     change () {
       this.currentVideoPage = 1
@@ -332,6 +341,18 @@ export default {
         this.currentVideoPage--
       } else if (val == 'next' && this.currentVideoPage != 3) {
         this.currentVideoPage++
+      }
+    },
+    openFollow (nick, id) {
+      eventBus.$emit('openFollow', {'nick':nick,'id':id})
+    },
+    toTask () {
+      let task = document.getElementsByClassName('anchors__task')[0]
+      if (task) {
+        let total = task.offsetTop
+        document.body.scrollTop = total
+        document.documentElement.scrollTop = total
+        window.pageYOffset = total
       }
     }
   }
