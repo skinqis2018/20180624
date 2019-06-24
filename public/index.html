@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=320,initial-scale=1.0,user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>20180105_ydcy_nianzhongshengdian</title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but 20180105_ydcy_nianzhongshengdian doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script>
+      !(function(doc, win) {
+        var docEle = doc.documentElement,
+          event = "onorientationchange" in window ? "orientationchange" : "resize",
+          fn = function() {
+            var width = docEle.clientWidth;
+            width && (docEle.style.fontSize = 10 * (width / 320) + "px");
+          };
+        win.addEventListener(event, fn, false);
+        doc.addEventListener("DOMContentLoaded", fn, false);
+      }(document, window));
+    </script>
+  </body>
+</html>
