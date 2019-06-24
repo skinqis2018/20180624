@@ -4,7 +4,7 @@
     <act-main />
     <act-draw />
     <act-rewards />
-    <Posters ref="posters"/>
+    <Posters ref="posters" v-bind:posters="posters"/>
     <div class="widget" @click="openPosters">
       <img src="./img/widget.png" alt="">
     </div>
@@ -33,6 +33,9 @@
   import Posters from './views/Posters'
   import Rule from './views/Rule'
 
+  // 封面占位图，有真实数据后可删除
+  import poster from './img/poster.jpg'
+
   export default {
     name: 'App',
     components: {
@@ -44,7 +47,25 @@
     },
     data () {
       return {
-        loading: false
+        loading: false,
+        posters: [
+        {
+          title: '2019.07.01期',
+          url: poster
+        },
+        {
+          title: '2019.07.01期',
+          url: poster
+        },
+        {
+          title: '2019.07.01期',
+          url: poster
+        },
+        {
+          title: '2019.07.01期',
+          url: poster
+        }
+      ]
       }
     },
     methods:{
