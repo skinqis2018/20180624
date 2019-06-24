@@ -30,7 +30,7 @@ export default {
   data () {
     return {
       visible: false,
-      nick: '我是主播的名字',
+      nick: '',
       id: '',
       number: 0
     }
@@ -39,6 +39,7 @@ export default {
     eventBus.$on('openFollow', obj => {
       this.nick = obj.nick
       this.id = obj.id
+      this.number = 0
       this.visible = true
     })
   },
@@ -61,9 +62,13 @@ export default {
       }
     },
     conform () {
-      eventBus.$emit('conformFollow', {'follow':this.number,'id':this.id})
-      this.number = 0
-      this.close()
+      if (numRe.test(this.number)) {
+        eventBus.$emit('conformFollow', {'follow':this.number,'id':this.id})
+        this.number = 0
+        this.close()
+      } else {
+        this.number = 0
+      }
     }
   }
 }
