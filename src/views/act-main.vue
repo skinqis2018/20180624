@@ -4,7 +4,7 @@
       <div class="anchors__head">
         <div class="anchors__head__text">
           1x&nbsp;
-          <img class="anchors__head__rose" src="../img/rose.png" />
+          <img class="anchors__head__rose" src="../img/medal.png" />
           =1积分
         </div>
         <img @click="toTask" src="../img/get_count.png"/>
@@ -84,7 +84,7 @@
           <img src="../img/task-btn1.png">
         </div>
         <div class="anchors__task__rule">
-          注:好友登录奖励需要好友是未登录过企鹅电竞的新用户或超过2周没有登陆的老用户，通过您的分享登陆企鹅电竞,您将额外获得3000个玫瑰花。
+          注:好友登录奖励需要好友是未登录过企鹅电竞的新用户或超过2周没有登陆的老用户，通过您的分享登陆企鹅电竞,您将额外获得3000个大神奖章。
         </div>
       </div>
     </div>
