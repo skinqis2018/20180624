@@ -159,7 +159,7 @@
         </div>
       </div>
       <div class="anchors__task">
-        <img class="anchors__task__banner" src="../img/task-banner.png"/>
+        <img class="anchors__task__banner" src="../img/task-banner-2.png"/>
         <div class="anchors__task__items">
           <img src="../img/video-task1.png">
           <img src="../img/video-task2.png">
